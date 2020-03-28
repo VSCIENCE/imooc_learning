@@ -9,6 +9,9 @@ Page({
     animationInfo:{},
     animationOpacity:0,
     cartIco:"cart-empty",
+
+    unlikeHidden:false,
+    likeHidden:true,
   },
 
   onShow(){
@@ -152,7 +155,37 @@ Page({
         my.hideLoading();
       }
     });
-
+    var userInfo=app.getGlobalUserInfo();
+    if(userInfo != null && userInfo != undefined)
+  {
+    //查询用户是否收藏商品
+     my.httpRequest({
+      url:app.serverUrl+'/items/userIsLikeItem?itemId='+itemId+'&userId='+userInfo.id,
+      method:'POST',
+      header:{'content-type':'application/json'},
+      dataType:'json',
+      success:function(res){
+        console.log(res);
+        var myData=res.data;
+        if(myData.status == 200){
+          var isLike = myData.data;
+          if(isLike == 1){
+            me.setData({
+              unlikeHidden:true,
+              likeHidden:false,
+            })
+          }
+          else{
+            me.setData({
+              unlikeHidden:false,
+              likeHidden:true,
+            })
+          }
+          // 把新的数据重新覆盖数据绑定中的原有的值
+        }
+      },             
+    });
+  }
   },
   buyMe(){
     var me=this;
@@ -167,6 +200,62 @@ Page({
     my.navigateTo({
       url:"/pages/orders/confirmOrder/confirmOrder"
     });
-  }
+  },
 
+  likeItem(){
+    var me=this;
+    var userInfo=app.getGlobalUserInfo();
+    if(userInfo == null && userInfo == undefined){
+      my.confirm({
+        title:"温馨提示",
+        content:"收藏商品请前往登陆",
+        confirmButtonText:"登陆",
+        cancelButtonText:"取消",
+        success: (res) => {
+          if(res.confirm){
+            my.switchTab({
+              url:"/pages/mine/info/info",
+            })
+          }
+        },
+      });
+    }
+    else{
+      my.httpRequest({
+      url:app.serverUrl+'/item/like?itemId='+me.data.item.id+'&userId='+userInfo.id,
+      method:'POST',
+      header:{'content-type':'application/json'},
+      dataType:'json',
+      success:function(res){
+        var myData=res.data;
+        if(myData.status == 200){
+          me.setData({
+            unlikeHidden:true,
+            likeHidden:false,
+          });
+          };
+      },             
+    });
+    }
+  },
+
+  unlikeItem(){
+    var me=this;
+    var userInfo=app.getGlobalUserInfo();
+      my.httpRequest({
+      url:app.serverUrl+'/item/unlike?itemId='+me.data.item.id+'&userId='+userInfo.id,
+      method:'POST',
+      header:{'content-type':'application/json'},
+      dataType:'json',
+      success:function(res){
+        var myData=res.data;
+        if(myData.status == 200){
+          me.setData({
+            unlikeHidden:false,
+            likeHidden:true,
+          })
+          }
+      },             
+    });
+    }
 });

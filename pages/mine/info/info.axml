@@ -3,13 +3,15 @@
 </view>
 
 <view class="userinfo" hidden="{{userNotLogin}}">
-  <image class="avatar" src=""/>
+  <image class="avatar" src="{{userInfo.faceImage}}"/>
     <view class="user-words">
-      <view class="nickname">慕课网</view>
+      <view class="nickname">{{userInfo.nickname}}</view>
       <view class="ico-block">
         <image src="/resources/icon/smallIco/vip.png" class="vipcard-ico"/>
+        <block a:if="{{userInfo.isCertified==1}}">
         <image src="/resources/icon/smallIco/certified.png" class="certified-ico"/>
+        </block>
       </view>
     </view>
-  <image src="/resources/icon/smallIco/settings.png" class="set-ico"/>
+  <image src="/resources/icon/smallIco/settings.png" class="set-ico" onTap="logout"/>
 </view>

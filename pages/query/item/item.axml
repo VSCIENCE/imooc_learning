@@ -86,9 +86,14 @@
     <view class="like-words">购物车</view>
   </view>
 
-  <view  class="like-img" onTap="">
+  <view  class="like-img" onTap="likeItem" hidden="{{unlikeHidden}}">
     <image src="/resources/icon/smallIco/unlike.png" class="like-ico"/>
     <view class="like-words">收藏</view>
+  </view>
+
+   <view  class="like-img" onTap="unlikeItem" hidden="{{likeHidden}}">
+    <image src="/resources/icon/smallIco/like.png" class="like-ico"/>
+    <view class="like-words">取消收藏</view>
   </view>
 
 <view class="add-to-cart" onTap="addToCart">
