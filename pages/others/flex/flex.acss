@@ -1,0 +1,59 @@
+.box{
+  /* 定义设置view为flex布局  */
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  flex-wrap: wrap;
+  height: 600px;
+  align-items: flex-end;
+}
+
+.item{
+  width: 120px;
+  height: 120px;
+  font-size:50px;
+}
+
+.item-stretch{
+  width: 120px;
+  font-size:50px;
+}
+
+.green{
+  background-color: green;
+  /* order:5; */
+}
+
+.red{
+  background-color: red;
+  /* order:4; */
+}
+
+.blue{
+  background-color: blue;
+  /* order:3; */
+}
+
+.yellow{
+  background-color: yellow;
+  /* order:2; */
+}
+
+.pink{
+  background-color: pink;
+  /* order:1; */
+}
+
+.lightgreen{
+  background-color: lightgreen;
+}
+
+.gray{
+  background-color: gray;
+  align-self: flex-start;
+}
+
+.orange{
+  background-color: orange;
+  align-self: center;
+}

@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "购物",
+  "titleBarColor": "#ff1699",
+  "usingComponents": { "swipe-action": "mini-antui/es/swipe-action/index" },
+  "pullRefresh": true
+}

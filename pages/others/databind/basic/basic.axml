@@ -1,0 +1,10 @@
+<view class="demo-words">
+  {{username}}
+</view>
+
+<view class="demo-words">
+  My name is {{student.name}},
+  I am {{student.age}} years old,
+  my height is {{student.height}} cm.
+</view>
+

@@ -1,0 +1,32 @@
+<view class="demo-words" onTap="tap">
+  点击事件
+</view>
+
+<view class="demo-words" catchLongTap="longTap">
+  长按点击事件
+</view>
+
+<view class="demo-words" catchTouchStart="touchStart">
+  开始触摸
+</view>
+
+<view class="demo-words" catchTouchMove="touchMove">
+  触摸后移动
+</view>
+
+<view class="demo-words" onTouchEnd="touchEnd">
+  触摸结束
+</view>
+
+<view class="demo-words" onTouchCancel="touchCancel">
+  触摸中断
+</view>
+
+<view class="demo-words" 
+      onTap="tapData" 
+      style="margin-top:50rpx"
+      data-name="imooc"
+      data-age="18"
+      data-userNickName="Jack">
+  测试数据集
+</view>

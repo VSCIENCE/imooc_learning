@@ -1,0 +1,25 @@
+<!-- 定义模板标签 -->
+<template name="itemList">
+<!-- 把公用代码放入template标签内 -->
+
+  <view class="new-item-list">
+  <block a:for="{{newItemList}}">
+  <view class="item-outter">
+    <navigator url="/pages/query/item/item?itemId={{item.id}}" open-type="navigate">
+      <image class="new-item-cover" src="{{item.cover}}"/>
+      </navigator>
+      <view class="item-border">
+        <block a:for="{{item.tagList}}" a:for-item="tag">
+        <view class="tags">{{tag}}</view>
+      </block>
+      </view>
+        <view class="price-border">
+        <view class="price">￥{{item.priceDiscountYuan}}</view>
+        <view class="like-counts">{{item.likeCounts}} <image class="like-ico" src="/resources/icon/smallIco/likes.png"/></view>
+      </view>
+
+  </view>
+  </block>
+</view>
+
+</template>

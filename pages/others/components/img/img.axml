@@ -1,0 +1,7 @@
+<image 
+src="/resources/course/img.png"
+class="img"
+lazyLoad="{{true}}"
+onError="imgError"
+onLoad="imgLoad"
+/>

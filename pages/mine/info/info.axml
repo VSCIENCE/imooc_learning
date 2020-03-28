@@ -1,0 +1,15 @@
+<view class="login-block" hidden="{{userLogin}}">
+  <view class="btn-login" onTap="login">请登录</view>
+</view>
+
+<view class="userinfo" hidden="{{userNotLogin}}">
+  <image class="avatar" src=""/>
+    <view class="user-words">
+      <view class="nickname">慕课网</view>
+      <view class="ico-block">
+        <image src="/resources/icon/smallIco/vip.png" class="vipcard-ico"/>
+        <image src="/resources/icon/smallIco/certified.png" class="certified-ico"/>
+      </view>
+    </view>
+  <image src="/resources/icon/smallIco/settings.png" class="set-ico"/>
+</view>

@@ -1,0 +1,15 @@
+<view class="red">全局</view>
+<view class="green">私有</view>
+<view style="height:1080px;">
+  Hello World!
+</view>
+
+<navigator 
+class="demo-words" 
+open-type="navigateBack">
+页面返回
+</navigator>
+
+<view onTap="close">
+  Close
+</view>

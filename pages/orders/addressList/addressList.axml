@@ -1,0 +1,42 @@
+    
+<radio-group onChange="setDefault">
+        <view class="address-outter" 
+                    style="border-style:dashed;
+                    border-color:#ff6699; 
+                    border-width:{{defaultChoose == index ? 2 : 0}}px;">
+            <view class="address-info" onTap="chooseMe" data-clickIndex={{index}}>
+                <view class="address-line">
+                    <view>jack</view>
+                    <view>15315135116646</view>
+                </view>
+                <view class="address-desc">
+                    四川省宜宾市高县文江镇             
+                </view>
+            </view>
+
+            <view class="operator">
+                <view class="set-default">
+                    <label>
+                        <radio class="rdo-default" /> 设为默认                        
+                    </label>
+                </view>
+                <view class="oper-block">
+                    <image src="/resources/icon/smallIco/modify.png" class="oper-ico"/>
+                    <view class="display-words" >编辑</view>
+                </view>
+                <view class="oper-block">
+                    <image src="/resources/icon/smallIco/delete.png" class="oper-ico"/>
+                    <view class="display-words" >删除</view>
+                </view>
+            </view>
+        </view>
+</radio-group>
+<!-- 底部操作按钮 -->
+<view class="bottom-operator">
+    <view class="confirm-choose" onTap="confirmChoose">        
+        确认选择    
+    </view>
+    <view class="add-new-address" onTap="addNewAddress">        
+        新增地址    
+    </view>
+</view>

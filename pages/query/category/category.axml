@@ -1,0 +1,32 @@
+<!-- 搜索栏 -->
+<view class="search">
+
+  <form class="search-form">
+    <image src="/resources/icon/smallIco/search.png" class="search-ico"/>
+    <input 
+     placeholder="请输入搜索商品名" 
+     type="text"
+     confirm-type="search" 
+     class="search-input"
+     onConfirm="searchItems"
+
+     />
+  </form>
+
+</view>
+
+<!-- 分类 -->
+<view class="category">
+
+<block a:for="{{catItem}}">
+<view class="cat-item">
+<navigator url="/pages/query/list/list?searchType=cat&catId={{item.id}}&catName={{item.name}}" open-type="navigate">
+<image class="cat-ico" src="/resources/category/{{item.id}}-{{item.code}}.png"/>
+<view class="cat-name">{{item.name}}</view>
+</view>
+</navigator>
+
+</block>
+
+</view>
+
